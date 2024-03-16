@@ -12,6 +12,7 @@ void main() {
 void printASCIITableInRange() {
     int a, b; // Variable declaration./ Объявление переменных.
 
+
     printf("Write a and b:\n"); // Range entry request./ Запрос на ввод диапазона.
     scanf("%d %d", &a, &b); // Reading the entered range./ Чтение введенного диапазона.
     isValidRange(a,b); // Checking whether the range is correct./ Проверка корректности диапазона.
@@ -25,6 +26,7 @@ void printASCIITableInRange() {
     printf("| Dec | Hex | Char|\n"); // Table header./ Заголовок таблицы.
     printf("+-----+-----+-----+\n");
     for(int i = a; i <= b; i++) { // For each character in the range./ Для каждого символа в диапазоне.
+        if (i==0 || i==7 || i==8 || i==9 || i==10 || i==13 || i==32 || i==255) continue; // Skip the specified values./ Пропуск указанных значений.
         printf("|%4d |%4x |%4c |\n", i, i, i); // Print 10-character, 16-character representation and symbol./ Печать 10-ричного, 16-ричного представления и символа.
     }
     printf("+-----+-----+-----+\n"); // Closing the table./ Закрытие таблицы.
